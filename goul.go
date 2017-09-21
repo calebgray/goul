@@ -1,10 +1,10 @@
 package main
 
-//go:generate go run goul.go build
+//go:generate go build -v ./...
 
 import (
 	"flag"
-	"github.com/calebgray/goul/arguments"
+	"github.com/calebgray/goul/goul/arguments"
 	"os"
 	"os/exec"
 	"runtime"
@@ -24,7 +24,7 @@ func main() {
 		if err != nil {
 			return 1
 		}*/
-		files := []string{"unzip"}
+		files := []string{"archive"}
 		progress := 0
 		progressIncrement := 100 / len(files)
 		outArg := "-o=bin/" + version + "/"

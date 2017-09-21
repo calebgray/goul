@@ -2,7 +2,7 @@ package arguments
 
 import (
 	"flag"
-	"github.com/calebgray/goul/version"
+	"github.com/calebgray/goul/goul/version"
 	"os"
 )
 
