@@ -1,4 +1,4 @@
-package goul
+package archive
 
 import (
 	"archive/zip"
@@ -8,7 +8,7 @@ import (
 	"sync"
 )
 
-func GoulArchiveUnzip(files []string, outdir string, verbose bool) {
+func Unzip(files []string, outdir string, verbose bool) {
 	for _, file := range files {
 		// Open Reader
 		r, err := zip.OpenReader(file)

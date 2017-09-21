@@ -2,11 +2,12 @@ package main
 
 import (
 	"flag"
-	"github.com/calebgray/goul/goul"
+	"github.com/calebgray/goul/goul/archive"
+	"github.com/calebgray/goul/goul/arguments"
 )
 
 func main() {
-	goul.GoulArgumentsRun()
+	arguments.Run()
 
-	goul.GoulArchiveUnzip(flag.Args(), "C:\\temp", goul.Verbose)
+	archive.Unzip(flag.Args(), "C:\\temp", arguments.Verbose)
 }
