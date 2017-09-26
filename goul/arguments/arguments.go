@@ -35,7 +35,7 @@ func Run() int {
 		println(os.Args[0], "-", version.Get())
 	}
 
-	if len(flag.Args()) == 0 {
+	if len(os.Args) == 0 {
 		flag.Usage()
 
 		if _commands != nil {
