@@ -6,8 +6,11 @@ import (
 	"os"
 )
 
+var help = flag.Bool("h", Verbose, "Be helpful.")
+var helpmore = flag.Bool("hh", Verbose, "Be more helpful.")
+
 var Verbose = false
-var _verbose = flag.Bool("v", Verbose, "Be verbose.")
+var verbose = flag.Bool("v", Verbose, "Be verbose.")
 
 type command struct {
 	help     string
@@ -30,12 +33,12 @@ func AddCommand(cmd string, help string, function func([]string) int) {
 func Run() int {
 	flag.Parse()
 
-	Verbose = *_verbose
+	Verbose = *verbose
 	if Verbose {
 		println(os.Args[0], "-", version.Get())
 	}
 
-	if len(os.Args) == 0 {
+	if len(os.Args) == 1 || *help || *helpmore {
 		flag.Usage()
 
 		if _commands != nil {
