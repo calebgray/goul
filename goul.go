@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"github.com/calebgray/goul/goul/arguments"
+	"github.com/calebgray/golibs/arguments"
 	"os"
 )
 
